@@ -11,3 +11,24 @@
     --color-accent-default: var(--color-northwestern-purple);
   }
 } */
+
+abbr {
+  cursor: help;
+  border-bottom: 1px dotted #888;
+  text-decoration: none;
+  position: relative;
+}
+
+abbr:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  color: #fff;
+  padding: 6px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
+}
