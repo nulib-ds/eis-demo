@@ -33,39 +33,35 @@ population in 1960 was 1968 (from EIS document)
   src="https://iiif.dc.library.northwestern.edu/iiif/3/ac3a5c6d-695a-4806-b7e0-9f22b5dab7ab/full/3000,/0/default.jpg"
 />
 
-<div className="my-20 px-8">
-  <h3 className="text-2xl font-bold mb-6">Interactive Demographics</h3>
-  
-  {/* The Graph Container */}
-  <div id="scroll-chart" className="space-y-4 max-w-2xl">
-    <div className="relative h-8 bg-gray-100 rounded overflow-hidden">
-      <div className="bar-fill h-full bg-blue-500 transition-all duration-1000 ease-out" style={{ width: '0%' }} data-target="85%"></div>
-      <span className="absolute inset-y-0 left-2 flex items-center text-xs font-bold">Category A</span>
-    </div>
-    <div className="relative h-8 bg-gray-100 rounded overflow-hidden">
-      <div className="bar-fill h-full bg-blue-500 transition-all duration-1000 ease-out" style={{ width: '0%' }} data-target="60%"></div>
-      <span className="absolute inset-y-0 left-2 flex items-center text-xs font-bold">Category B</span>
-    </div>
+<div id="scroll-chart" className="space-y-4 max-w-2xl my-8">
+  <div className="relative h-8 bg-gray-200 rounded overflow-hidden">
+    <div className="bar-fill h-full bg-blue-600 w-0 transition-all duration-1000" data-target="85%"></div>
+    <span className="absolute inset-y-0 left-2 flex items-center text-xs font-bold text-black">Category A</span>
   </div>
+  <div className="relative h-8 bg-gray-200 rounded overflow-hidden">
+    <div className="bar-fill h-full bg-blue-600 w-0 transition-all duration-1000" data-target="60%"></div>
+    <span className="absolute inset-y-0 left-2 flex items-center text-xs font-bold text-black">Category B</span>
+  </div>
+</div>
 
-  {/* The Animation Script */}
+{/* MDX-Safe Trigger */}
+{typeof window !== 'undefined' && (
   <script dangerouslySetInnerHTML={{ __html: `
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const bars = entry.target.querySelectorAll('.bar-fill');
-          bars.forEach(bar => {
-            bar.style.width = bar.getAttribute('data-target');
-          });
-        }
-      });
-    }, { threshold: 0.5 });
-    
-    document.addEventListener('DOMContentLoaded', () => {
+    (function() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+              bar.style.width = bar.getAttribute('data-target');
+            });
+          }
+        });
+      }, { threshold: 0.1 });
+
       const target = document.querySelector('#scroll-chart');
       if (target) observer.observe(target);
-    });
+    })();
   `}} />
-</div>
+)}
 
 </Container>
