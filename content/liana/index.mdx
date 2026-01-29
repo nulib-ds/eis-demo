@@ -45,6 +45,47 @@ population in 1960 was 1968 (from EIS document)
   </div>
 </div>
 
+## experimenting with bar graph (round 2) 
+
+<div className="my-12 max-w-3xl border-l-2 border-gray-200 pl-6">
+  <h3 className="text-xl font-bold mb-8 text-gray-800">Loring Park Demographic Shifts</h3>
+
+  {/* Item 1: Historical Population */}
+  <div className="mb-6">
+    <div className="flex justify-between mb-2">
+      <span className="text-sm font-semibold text-gray-700">1960 Population (1,968)</span>
+      <span className="text-sm font-bold text-blue-600">20% of current</span>
+    </div>
+    <div className="w-full bg-gray-100 rounded-full h-3">
+      <div className="bg-blue-500 h-3 rounded-full" style={{ width: '20%' }}></div>
+    </div>
+  </div>
+
+  {/* Item 2: Redevelopment Area */}
+  <div className="mb-6">
+    <div className="flex justify-between mb-2">
+      <span className="text-sm font-semibold text-gray-700">Redevelopable Portion (1,000)</span>
+      <span className="text-sm font-bold text-indigo-600">10% of current</span>
+    </div>
+    <div className="w-full bg-gray-100 rounded-full h-3">
+      <div className="bg-indigo-500 h-3 rounded-full" style={{ width: '10%' }}></div>
+    </div>
+  </div>
+
+  {/* Item 3: Modern Growth */}
+  <div className="mb-6">
+    <div className="flex justify-between mb-2">
+      <span className="text-sm font-semibold text-gray-700">2020 Population (9,718)</span>
+      <span className="text-sm font-bold text-emerald-600">100% (Baseline)</span>
+    </div>
+    <div className="w-full bg-gray-100 rounded-full h-3">
+      <div className="bg-emerald-500 h-3 rounded-full" style={{ width: '100%' }}></div>
+    </div>
+  </div>
+
+  <p className="text-xs text-gray-500 italic mt-4">Source: EIS Document & Wikipedia</p>
+</div>
+
 ## Experimenting with juxtapose
 <iframe frameborder="0" class="juxtapose" width="100%" height="null" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=d4989f5e-fd4f-11f0-ba1b-0e6f42328d7d"></iframe>
 
