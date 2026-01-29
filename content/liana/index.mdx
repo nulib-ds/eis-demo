@@ -21,6 +21,8 @@ in re-developable portion of the district was about 1000
 
 population in 1960 was 1968 (from EIS document)
 
+Total population according to the 2000 census is 7,501, an increase of 14% since 1990
+
 2020 population: 9,718 (source: Wikipedia)
 
 
@@ -127,6 +129,65 @@ population in 1960 was 1968 (from EIS document)
   </div>
 
   <p style={{ fontSize: '12px', color: '#64748b', fontStyle: 'italic', marginTop: '16px' }}>Source: EIS Document & Wikipedia</p>
+</div>
+
+## Experimenting with bar graphs round 4
+
+<div style={{ margin: '40px 0', fontFamily: 'sans-serif' }}>
+  <h3 style={{ fontSize: '1.25rem', fontWeight: 'bold', marginBottom: '30px' }}>
+    Loring Park: 60 Years of Population Growth
+  </h3>
+
+  {/* Graph Container */}
+  <div style={{ 
+    display: 'flex', 
+    alignItems: 'flex-end', 
+    height: '300px', 
+    gap: '15px', 
+    borderBottom: '2px solid #cbd5e1',
+    paddingBottom: '5px'
+  }}>
+    
+    {/* 1960: 1,968 (approx 20% of max) */}
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span style={{ fontSize: '10px', fontWeight: 'bold', marginBottom: '4px' }}>1,968</span>
+      <div style={{ width: '100%', backgroundColor: '#60a5fa', height: '20%', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '8px' }}>1960</span>
+    </div>
+
+    {/* 1970 Total: 1,387 (approx 14% of max) */}
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span style={{ fontSize: '10px', fontWeight: 'bold', marginBottom: '4px' }}>1,387</span>
+      <div style={{ width: '100%', backgroundColor: '#3b82f6', height: '14%', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '8px' }}>1970</span>
+    </div>
+
+    {/* 1970 Redevelopable: 1,000 (approx 10% of max) */}
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span style={{ fontSize: '10px', fontWeight: 'bold', marginBottom: '4px' }}>1,000*</span>
+      <div style={{ width: '100%', backgroundColor: '#2563eb', height: '10%', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '10px', marginTop: '8px', textAlign: 'center' }}>'70 (Redev)</span>
+    </div>
+
+    {/* 2000 Census: 7,501 (approx 77% of max) */}
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span style={{ fontSize: '10px', fontWeight: 'bold', marginBottom: '4px' }}>7,501</span>
+      <div style={{ width: '100%', backgroundColor: '#1d4ed8', height: '77%', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '8px' }}>2000</span>
+    </div>
+
+    {/* 2020: 9,718 (100% height) */}
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span style={{ fontSize: '10px', fontWeight: 'bold', marginBottom: '4px' }}>9,718</span>
+      <div style={{ width: '100%', backgroundColor: '#1e3a8a', height: '100%', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '8px' }}>2020</span>
+    </div>
+
+  </div>
+
+  <p style={{ fontSize: '11px', color: '#64748b', marginTop: '20px', fontStyle: 'italic' }}>
+    *Portion of the 1970 population located in re-developable areas. Source: EIS Document & Wikipedia.
+  </p>
 </div>
 
 ## Experimenting with juxtapose
