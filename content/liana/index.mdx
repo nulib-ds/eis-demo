@@ -337,6 +337,85 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </div>
 </div>
 
+## Experimenting v3 pie chart
+
+<div style={{ margin: '40px 0', fontFamily: 'sans-serif', maxWidth: '600px' }}>
+  <style>{`
+    .pie-unit { outline: none; }
+    .pie-segment { 
+      transition: all 0.3s ease; 
+      cursor: pointer; 
+      stroke-width: 32;
+    }
+    /* Hover/Click Effect */
+    .pie-unit:hover .pie-segment, 
+    .pie-unit:focus .pie-segment { 
+      stroke-width: 34;
+      filter: brightness(1.1);
+    }
+    /* Label Logic */
+    .pie-label { 
+      opacity: 0; 
+      transition: opacity 0.2s ease; 
+      pointer-events: none; 
+      font-weight: bold;
+      font-size: 5px;
+      text-anchor: middle;
+      fill: #1e293b;
+    }
+    .pie-unit:hover .pie-label, 
+    .pie-unit:focus .pie-label { 
+      opacity: 1; 
+    }
+  `}</style>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
+    
+    <svg viewBox="0 0 32 32" style={{ width: '280px', height: '280px', borderRadius: '50%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
+      
+      {/* Category C - 40% */}
+      <g className="pie-unit" tabIndex="0">
+        <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#018571" strokeDasharray="40 100" />
+        <text className="pie-label" x="16" y="17.5" transform="rotate(90 16 16)">40%</text>
+      </g>
+      
+      {/* Category B - 30% */}
+      <g className="pie-unit" tabIndex="0">
+        <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#A6611A" strokeDasharray="30 100" strokeDashoffset="-40" />
+        <text className="pie-label" x="16" y="17.5" transform="rotate(90 16 16)">30%</text>
+      </g>
+      
+      {/* Category A - 20% */}
+      <g className="pie-unit" tabIndex="0">
+        <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#DFC27D" strokeDasharray="20 100" strokeDashoffset="-70" />
+        <text className="pie-label" x="16" y="17.5" transform="rotate(90 16 16)">20%</text>
+      </g>
+      
+      {/* Category D - 10% */}
+      <g className="pie-unit" tabIndex="0">
+        <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#80CDC1" strokeDasharray="10 100" strokeDashoffset="-90" />
+        <text className="pie-label" x="16" y="17.5" transform="rotate(90 16 16)">10%</text>
+      </g>
+
+      {/* Center Circle to make it look cleaner */}
+      <circle r="6" cx="16" cy="16" fill="#ffffff" />
+    </svg>
+
+    <div style={{ flex: '1', minWidth: '200px' }}>
+      <h4 style={{ margin: '0 0 10px 0' }}>Demographic Breakdown</h4>
+      <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '20px' }}>
+        <strong>Click or hover</strong> on the segments to see the specific percentage for each group.
+      </p>
+      <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px' }}>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#018571', marginRight: '8px' }}>■</span> Category C (40%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#A6611A', marginRight: '8px' }}>■</span> Category B (30%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#DFC27D', marginRight: '8px' }}>■</span> Category A (20%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#80CDC1', marginRight: '8px' }}>■</span> Category D (10%)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 ## Experimenting with juxtapose
 
 <iframe 
