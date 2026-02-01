@@ -288,50 +288,6 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </p>
 </div>
 
-## Experimenting with pie chart
-
-<div style={{ 
-  margin: '40px 0', 
-  fontFamily: 'sans-serif', 
-  maxWidth: '500px',
-  background: '#ffffff',
-  padding: '20px',
-  borderRadius: '12px',
-  border: '1px solid #e2e8f0'
-}}>
-  <style>{`
-    .pie-segment { transition: transform 0.3s, filter 0.3s; cursor: pointer; transform-origin: center; }
-    .pie-segment:hover { transform: scale(1.05); filter: brightness(1.1); }
-  `}</style>
-
-  <div style={{ display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
-    
-    <svg viewBox="0 0 32 32" style={{ width: '200px', height: '200px', borderRadius: '50%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
-      {/* Category C: 40% (#018571) */}
-      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#018571" strokeWidth="32" strokeDasharray="40 100" />
-      
-      {/* Category B: 30% (#A6611A) */}
-      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#A6611A" strokeWidth="32" strokeDasharray="30 100" strokeDashoffset="-40" />
-      
-      {/* Category A: 20% (#DFC27D) */}
-      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#DFC27D" strokeWidth="32" strokeDasharray="20 100" strokeDashoffset="-70" />
-      
-      {/* Category D: 10% (#80CDC1) */}
-      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#80CDC1" strokeWidth="32" strokeDasharray="10 100" strokeDashoffset="-90" />
-    </svg>
-
-    <div style={{ flex: '1', minWidth: '150px' }}>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '14px' }}>
-        <div style={{ width: '12px', height: '12px', borderRadius: '50%', marginRight: '10px', backgroundColor: '#018571' }}></div> 
-        <span>C: 40%</span>
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '14px' }}>
-        <div style={{ width: '12px', height: '12px', borderRadius: '50%', marginRight: '10px', backgroundColor: '#A6611A' }}></div> 
-        <span>B: 30%</span>
-      </div>
-      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '14px' }}>
-        <div style={{ width: '12px', height: '12px', borderRadius
-
 
 ## Experimenting with juxtapose
 
