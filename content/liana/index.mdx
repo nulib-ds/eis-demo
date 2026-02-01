@@ -221,6 +221,54 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </p>
 </div>
 
+# Experimenting with pie chart
+
+<div style="margin: 40px 0; font-family: sans-serif; max-width: 500px;">
+  <style>
+    /* Scoped styles for the pie chart */
+    .pie-container { display: flex; align-items: center; gap: 40px; flex-wrap: wrap; }
+    .pie-segment { 
+      transition: transform 0.3s, filter 0.3s; 
+      cursor: pointer; 
+      transform-origin: center; 
+    }
+    .pie-segment:hover { 
+      transform: scale(1.08); 
+      filter: brightness(1.15); 
+    }
+    .legend-list { list-style: none; padding: 0; margin: 0; }
+    .legend-item { 
+      display: flex; 
+      align-items: center; 
+      margin-bottom: 12px; 
+      font-size: 14px; 
+      color: #475569;
+    }
+    .swatch { 
+      width: 14px; 
+      height: 14px; 
+      border-radius: 3px; 
+      margin-right: 12px; 
+    }
+  </style>
+
+  <div class="pie-container">
+    
+    <svg viewBox="0 0 32 32" style="width: 220px; height: 220px; border-radius: 50%; transform: rotate(-90deg); overflow: visible;">
+      
+      <circle class="pie-segment" r="16" cx="16" cy="16" fill="transparent" 
+              stroke="#0d5d56" stroke-width="32" 
+              stroke-dasharray="40 100" />
+      
+      <circle class="pie-segment" r="16" cx="16" cy="16" fill="transparent" 
+              stroke="#a36223" stroke-width="32" 
+              stroke-dasharray="30 100" stroke-dashoffset="-40" />
+      
+      <circle class="pie-segment" r="16" cx="16" cy="16" fill="transparent" 
+              stroke="#e0c17a" stroke-width="32" 
+              stroke-dasharray="20 100" stroke-dashoffset="-70" />
+      
+      <circle class="pie-segment" r="16" cx="16" cy="16" fill="transparent"
 
 ## Experimenting with juxtapose
 
