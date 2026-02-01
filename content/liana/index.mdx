@@ -155,33 +155,6 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </p>
 </div>
 
-
-## bar graph round 5; interactive
-
-<div style={{ margin: '40px 0', fontFamily: 'sans-serif' }}>
-  <style>{`
-    .bar-group:hover .bar-fill { background-color: #1d4ed8 !callout; }
-    .bar-group:hover .tooltip { opacity: 1; transform: translateY(-5px); }
-  `}</style>
-
-  <div style={{ display: 'flex', alignItems: 'flex-end', height: '250px', gap: '20px' }}>
-    
-    {/* Example Bar with Hover Tooltip */}
-    <div className="bar-group" style={{ flex: 1, position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer' }}>
-      <div className="tooltip" style={{ 
-        position: 'absolute', top: '-40px', backgroundColor: '#333', color: '#fff', padding: '4px 8px', 
-        borderRadius: '4px', fontSize: '10px', opacity: 0, transition: '0.3s', pointerEvents: 'none' 
-      }}>
-        Pop: 9,718 (Source: Wiki)
-      </div>
-      <div className="bar-fill" style={{ width: '100%', backgroundColor: '#3b82f6', height: '100%', borderRadius: '4px 4px 0 0', transition: '0.3s' }}></div>
-      <span style={{ fontSize: '12px', marginTop: '8px' }}>2020</span>
-    </div>
-
-  </div>
-</div>
-
-
 ## experimenting with bar graph - interactive
 
 <div style={{ margin: '60px 0', fontFamily: 'sans-serif' }}>
