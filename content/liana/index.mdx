@@ -222,7 +222,7 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </p>
 </div>
 
-## Loring Park Demographic Data
+## pie chart; trial 1
 
 <div style={{ 
   margin: '40px 0', 
@@ -271,6 +271,68 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
         <div style={{ width: '14px', height: '14px', borderRadius: '3px', marginRight: '12px', backgroundColor: '#80CDC1' }}></div> 
         <span><strong>10%</strong> Category D</span>
       </div>
+    </div>
+  </div>
+</div>
+
+## pie chart but interactive 
+
+<div style={{ margin: '40px 0', fontFamily: 'sans-serif', maxWidth: '500px' }}>
+  <style>{`
+    .pie-segment { 
+      transition: all 0.3s ease; 
+      cursor: pointer; 
+      outline: none;
+      transform-origin: center;
+    }
+    .percentage-label { 
+      opacity: 0; 
+      transition: opacity 0.3s ease; 
+      pointer-events: none; 
+      font-weight: bold;
+    }
+    /* When the segment is clicked (focused), reveal the label and brighten the slice */
+    .pie-segment:focus { 
+      filter: brightness(1.2);
+      transform: scale(1.03);
+    }
+    .pie-segment:focus + .percentage-label { 
+      opacity: 1; 
+    }
+  `}</style>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '30px', flexWrap: 'wrap' }}>
+    
+    <svg viewBox="0 0 32 32" style={{ width: '250px', height: '250px', borderRadius: '50%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
+      
+      {/* Category C - 40% */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#018571" strokeWidth="32" strokeDasharray="40 100" />
+      <text className="percentage-label" x="22" y="-12" transform="rotate(90)" style={{ fontSize: '3px', fill: '#018571' }}>40%</text>
+      
+      {/* Category B - 30% */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#A6611A" strokeWidth="32" strokeDasharray="30 100" strokeDashoffset="-40" />
+      <text className="percentage-label" x="5" y="-28" transform="rotate(90)" style={{ fontSize: '3px', fill: '#A6611A' }}>30%</text>
+      
+      {/* Category A - 20% */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#DFC27D" strokeWidth="32" strokeDasharray="20 100" strokeDashoffset="-70" />
+      <text className="percentage-label" x="-15" y="-22" transform="rotate(90)" style={{ fontSize: '3px', fill: '#DFC27D' }}>20%</text>
+      
+      {/* Category D - 10% */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#80CDC1" strokeWidth="32" strokeDasharray="10 100" strokeDashoffset="-90" />
+      <text className="percentage-label" x="-25" y="-5" transform="rotate(90)" style={{ fontSize: '3px', fill: '#80CDC1' }}>10%</text>
+
+    </svg>
+
+    <div style={{ flex: '1' }}>
+      <p style={{ fontSize: '14px', color: '#64748b' }}>
+        <strong>Click a segment</strong> to reveal the population percentage for that demographic.
+      </p>
+      <ul style={{ listStyle: 'none', padding: 0, fontSize: '13px' }}>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#018571' }}>●</span> Category C</li>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#A6611A' }}>●</span> Category B</li>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#DFC27D' }}>●</span> Category A</li>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#80CDC1' }}>●</span> Category D</li>
+      </ul>
     </div>
   </div>
 </div>
