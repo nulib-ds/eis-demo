@@ -221,7 +221,7 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </p>
 </div>
 
-# Experimenting with pie chart
+## Experimenting with pie chart
 
 <div style="margin: 40px 0; font-family: sans-serif; max-width: 500px;">
   <style>
@@ -269,6 +269,28 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
               stroke-dasharray="20 100" stroke-dashoffset="-70" />
       
       <circle class="pie-segment" r="16" cx="16" cy="16" fill="transparent"
+
+## Experimenting with line graph 
+
+<div style="margin: 40px 0; font-family: sans-serif; max-width: 600px; background: #fff; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;">
+  <style>
+    .graph-point { cursor: pointer; transition: all 0.3s ease; }
+    .point-trigger { fill: transparent; cursor: pointer; pointer-events: all; }
+    .data-label { opacity: 0; transition: opacity 0.3s ease; pointer-events: none; font-weight: bold; font-size: 10px; }
+    
+    /* Interaction: When the trigger is hovered, show label and glow the point */
+    .point-group:hover .data-label { opacity: 1; }
+    .point-group:hover .graph-point { r: 6; fill: #1e3a8a; filter: drop-shadow(0 0 3px rgba(0,0,0,0.3)); }
+    .point-group:active .data-label { opacity: 1; } /* For mobile touch */
+  </style>
+
+  <h3 style="margin-bottom: 30px; color: #1e293b;">Growth Projection (Interactive)</h3>
+
+  <svg viewBox="0 0 400 200" style="overflow: visible;">
+    <line x1="0" y1="180" x2="400" y2="180" stroke="#e2e8f0" stroke-width="1" />
+    <line x1="0" y1="130" x2="400" y2="130" stroke="#f1f5f9" stroke-width="1" />
+    <line x1="0" y1="80" x2="400" y2="80" stroke="#f1f5f9" stroke-width="1" />
+    <line x1="0" y1="30" x2="400" y2="30" stroke="#f1f5f9" stroke-
 
 ## Experimenting with juxtapose
 
