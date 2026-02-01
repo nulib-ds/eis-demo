@@ -482,8 +482,7 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
       </g
 
 
-## v5 pie chart
-
+##v5
 <div style={{ margin: '40px 0', fontFamily: 'sans-serif', maxWidth: '600px' }}>
   <style>{`
     .pie-trigger { display: none; }
@@ -498,27 +497,31 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
     }
     .pie-slice { cursor: pointer; transition: filter 0.3s ease, stroke-width 0.3s ease; }
 
+    /* CSS uses hyphenated properties (stroke-width) */
     #trig-c:checked ~ .g-c .pie-data { opacity: 1; }
-    #trig-c:checked ~ .g-c .pie-slice { filter: brightness(1.2); strokeWidth: 34; }
+    #trig-c:checked ~ .g-c .pie-slice { filter: brightness(1.2); stroke-width: 34px; }
     
     #trig-b:checked ~ .g-b .pie-data { opacity: 1; }
-    #trig-b:checked ~ .g-b .pie-slice { filter: brightness(1.2); strokeWidth: 34; }
+    #trig-b:checked ~ .g-b .pie-slice { filter: brightness(1.2); stroke-width: 34px; }
 
     #trig-a:checked ~ .g-a .pie-data { opacity: 1; }
-    #trig-a:checked ~ .g-a .pie-slice { filter: brightness(1.2); strokeWidth: 34; }
+    #trig-a:checked ~ .g-a .pie-slice { filter: brightness(1.2); stroke-width: 34px; }
 
     #trig-d:checked ~ .g-d .pie-data { opacity: 1; }
-    #trig-d:checked ~ .g-d .pie-slice { filter: brightness(1.2); strokeWidth: 34; }
+    #trig-d:checked ~ .g-d .pie-slice { filter: brightness(1.2); stroke-width: 34px; }
   `}</style>
 
   <div style={{ display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
     <svg viewBox="0 0 32 32" style={{ width: '280px', height: '280px', borderRadius: '50%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
       
-      <foreignObject width="0" height="0">
-        <input type="checkbox" id="trig-c" className="pie-trigger" />
-        <input type="checkbox" id="trig-b" className="pie-trigger" />
-        <input type="checkbox" id="trig-a" className="pie-trigger" />
-        <input type="checkbox" id="trig-d" className="pie-trigger" />
+      {/* Hidden Triggers moved inside a foreignObject for MDX safety */}
+      <foreignObject width="1" height="1">
+        <div style={{ visibility: 'hidden' }}>
+          <input type="checkbox" id="trig-c" className="pie-trigger" />
+          <input type="checkbox" id="trig-b" className="pie-trigger" />
+          <input type="checkbox" id="trig-a" className="pie-trigger" />
+          <input type="checkbox" id="trig-d" className="pie-trigger" />
+        </div>
       </foreignObject>
 
       {/* Category C - 40% */}
