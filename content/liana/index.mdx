@@ -293,75 +293,44 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
 <div style={{ 
   margin: '40px 0', 
   fontFamily: 'sans-serif', 
-  maxWidth: '600px', 
-  background: '#ffffff', 
-  padding: '20px', 
-  border: '1px solid #e2e8f0', 
-  borderRadius: '12px' 
+  maxWidth: '500px',
+  background: '#ffffff',
+  padding: '20px',
+  borderRadius: '12px',
+  border: '1px solid #e2e8f0'
 }}>
-  
   <style>{`
-    .graph-group .label { opacity: 0; transition: 0.2s ease; }
-    .graph-group:hover .label { opacity: 1; }
-    .graph-group:hover circle { r: 7; fill: #1e3a8a; }
+    .pie-segment { transition: transform 0.3s, filter 0.3s; cursor: pointer; transform-origin: center; }
+    .pie-segment:hover { transform: scale(1.05); filter: brightness(1.1); }
   `}</style>
 
-  <svg viewBox="0 0 400 200" style={{ overflow: 'visible', display: 'block', width: '100%', height: 'auto' }}>
-    {/* Grid Lines */}
-    <line x1="0" y1="180" x2="400" y2="180" stroke="#e2e8f0" strokeWidth="1" />
-    <line x1="0" y1="30" x2="400" y2="30" stroke="#f1f5f9" strokeWidth="1" />
+  <div style={{ display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
+    
+    <svg viewBox="0 0 32 32" style={{ width: '200px', height: '200px', borderRadius: '50%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
+      {/* Category C: 40% (#018571) */}
+      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#018571" strokeWidth="32" strokeDasharray="40 100" />
+      
+      {/* Category B: 30% (#A6611A) */}
+      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#A6611A" strokeWidth="32" strokeDasharray="30 100" strokeDashoffset="-40" />
+      
+      {/* Category A: 20% (#DFC27D) */}
+      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#DFC27D" strokeWidth="32" strokeDasharray="20 100" strokeDashoffset="-70" />
+      
+      {/* Category D: 10% (#80CDC1) */}
+      <circle className="pie-segment" r="16" cx="16" cy="16" fill="transparent" stroke="#80CDC1" strokeWidth="32" strokeDasharray="10 100" strokeDashoffset="-90" />
+    </svg>
 
-    {/* Connecting Line */}
-    <path 
-      d="M 40 160 L 120 110 L 200 130 L 280 60 L 360 40" 
-      fill="none" 
-      stroke="#3b82f6" 
-      strokeWidth="3" 
-      strokeLinejoin="round" 
-    />
-
-    {/* Point 1 */}
-    <g className="graph-group" style={{ cursor: 'pointer' }}>
-      <text className="label" x="40" y="145" textAnchor="middle" style={{ fontSize: '12px', fontWeight: 'bold', fill: '#1e3a8a' }}>150</text>
-      <circle cx="40" cy="160" r="5" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
-    </g>
-
-    {/* Point 2 */}
-    <g className="graph-group" style={{ cursor: 'pointer' }}>
-      <text className="label" x="120" y="95" textAnchor="middle" style={{ fontSize: '12px', fontWeight: 'bold', fill: '#1e3a8a' }}>310</text>
-      <circle cx="120" cy="110" r="5" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
-    </g>
-
-    {/* Point 3 */}
-    <g className="graph-group" style={{ cursor: 'pointer' }}>
-      <text className="label" x="200" y="115" textAnchor="middle" style={{ fontSize: '12px', fontWeight: 'bold', fill: '#1e3a8a' }}>275</text>
-      <circle cx="200" cy="130" r="5" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
-    </g>
-
-    {/* Point 4 */}
-    <g className="graph-group" style={{ cursor: 'pointer' }}>
-      <text className="label" x="280" y="45" textAnchor="middle" style={{ fontSize: '12px', fontWeight: 'bold', fill: '#1e3a8a' }}>520</text>
-      <circle cx="280" cy="60" r="5" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
-    </g>
-
-    {/* Point 5 */}
-    <g className="graph-group" style={{ cursor: 'pointer' }}>
-      <text className="label" x="360" y="25" textAnchor="middle" style={{ fontSize: '12px', fontWeight: 'bold', fill: '#1e3a8a' }}>680</text>
-      <circle cx="360" cy="40" r="5" fill="#3b82f6" stroke="#fff" strokeWidth="2" />
-    </g>
-
-    {/* Axis Labels */}
-    <text x="40" y="195" fontSize="10" fill="#94a3b8">Jan</text>
-    <text x="120" y="195" fontSize="10" fill="#94a3b8">Feb</text>
-    <text x="200" y="195" fontSize="10" fill="#94a3b8">Mar</text>
-    <text x="280" y="195" fontSize="10" fill="#94a3b8">Apr</text>
-    <text x="360" y="195" fontSize="10" fill="#94a3b8">May</text>
-  </svg>
-  
-  <p style={{ fontSize: '12px', color: '#64748b', marginTop: '15px', textAlign: 'center' }}>
-    Hover over a point to reveal the exact value.
-  </p>
-</div>
+    <div style={{ flex: '1', minWidth: '150px' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '14px' }}>
+        <div style={{ width: '12px', height: '12px', borderRadius: '50%', marginRight: '10px', backgroundColor: '#018571' }}></div> 
+        <span>C: 40%</span>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '14px' }}>
+        <div style={{ width: '12px', height: '12px', borderRadius: '50%', marginRight: '10px', backgroundColor: '#A6611A' }}></div> 
+        <span>B: 30%</span>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '14px' }}>
+        <div style={{ width: '12px', height: '12px', borderRadius
 
 ## line graph experimentation
 
