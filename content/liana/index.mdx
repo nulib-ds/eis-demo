@@ -332,45 +332,6 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
       <div style={{ display: 'flex', alignItems: 'center', marginBottom: '8px', fontSize: '14px' }}>
         <div style={{ width: '12px', height: '12px', borderRadius
 
-## line graph experimentation
-
-<div style={{ 
-  margin: '40px 0', 
-  fontFamily: 'sans-serif', 
-  maxWidth: '600px', 
-  background: '#ffffff', 
-  padding: '20px', 
-  borderRadius: '12px', 
-  border: '1px solid #e2e8f0' 
-}}>
-  <style>{`
-    .point-group { cursor: pointer; }
-    .data-label { opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
-    .point-group:hover .data-label { opacity: 1; }
-    .point-group:hover .graph-point { r: 7; fill: #1e3a8a; }
-  `}</style>
-
-  <h3 style={{ marginBottom: '30px', color: '#1e293b' }}>Growth Projection</h3>
-
-  <svg viewBox="0 0 400 200" style={{ overflow: 'visible', width: '100%', height: 'auto' }}>
-    {/* Grid Lines */}
-    <line x1="0" y1="180" x2="400" y2="180" stroke="#e2e8f0" strokeWidth="1" />
-    <line x1="0" y1="130" x2="400" y2="130" stroke="#f1f5f9" strokeWidth="1" />
-    <line x1="0" y1="80" x2="400" y2="80" stroke="#f1f5f9" strokeWidth="1" />
-    <line x1="0" y1="30" x2="400" y2="30" stroke="#f1f5f9" strokeWidth="1" />
-
-    {/* Connecting Line */}
-    <path 
-      d="M 20 160 L 100 120 L 200 140 L 300 60 L 380 40" 
-      fill="none" 
-      stroke="#3b82f6" 
-      strokeWidth="3" 
-      strokeLinejoin="round" 
-    />
-
-    {/* Interactive Data Points */}
-    <g className="point-group">
-      <text x="20" y="145" textAnchor="middle" className="data-label
 
 ## Experimenting with juxtapose
 
