@@ -221,9 +221,74 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </p>
 </div>
 
-## Experimenting with pie chart
+## v2 interactive bar graph
 
-## Experimental Growth Data
+{/* Loring Park Bar Graph - Canopy Optimized */}
+<div id="loring-park-graph" style={{ margin: '60px 0', fontFamily: 'sans-serif' }}>
+  <style>{`
+    #loring-park-graph .bar-item { transition: all 0.3s ease; cursor: pointer; }
+    #loring-park-graph .bar-item:hover { filter: contrast(1.5); transform: translateY(-2px); }
+    #loring-park-graph .bar-group:hover .pop-label { opacity: 1 !important; color: #1e3a8a; }
+  `}</style>
+
+  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '40px' }}>
+    Loring Park Demographic Shifts (Interactive)
+  </h3>
+
+  <div style={{ 
+    display: 'flex', 
+    alignItems: 'flex-end', 
+    height: '250px', 
+    gap: '20px', 
+    borderBottom: '2px solid #cbd5e1',
+    paddingBottom: '10px',
+    maxWidth: '800px'
+  }}>
+    
+    {/* 1960 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>1,968</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#93c5fd', height: '40px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '13px', marginTop: '10px' }}>1960</span>
+    </div>
+
+    {/* 1970 Total Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>1,387</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#60a5fa', height: '28px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '13px', marginTop: '10px' }}>1970</span>
+    </div>
+
+    {/* 1970 Redevelopable Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>1,000*</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#3b82f6', height: '20px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '11px', marginTop: '10px', textAlign: 'center' }}>'70 (Redev)</span>
+    </div>
+
+    {/* 2000 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>7,501</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#2563eb', height: '150px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '13px', marginTop: '10px' }}>2000</span>
+    </div>
+
+    {/* 2020 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>9,718</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#1e3a8a', height: '200px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '13px', marginTop: '10px' }}>2020</span>
+    </div>
+
+  </div>
+
+  <p style={{ fontSize: '12px', color: '#64748b', marginTop: '25px', fontStyle: 'italic' }}>
+    Hover over each column to reveal exact population numbers. <br />
+    *Portion of district subject to redevelopment. [Source: EIS & Wikipedia]
+  </p>
+</div>
+
+## Experimenting with pie chart
 
 <div style={{ 
   margin: '40px 0', 
@@ -299,8 +364,6 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
 </div>
 
 ## line graph experimentation
-
-## Growth Projection (Interactive)
 
 <div style={{ 
   margin: '40px 0', 
