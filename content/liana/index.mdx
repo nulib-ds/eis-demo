@@ -417,6 +417,105 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
 </div>
 
 
+## Experimenting with interactive pie chart 
+<div style={{ margin: '40px 0', fontFamily: 'sans-serif', maxWidth: '600px' }}>
+  <style>{`
+    /* Hide the actual checkboxes */
+    .pie-trigger { display: none; }
+
+    /* Default state for the labels */
+    .pie-data { 
+      opacity: 0; 
+      transition: opacity 0.3s ease; 
+      pointer-events: none; 
+      font-size: 5px; 
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #1e293b;
+    }
+
+    /* Segment styling */
+    .pie-slice { 
+      cursor: pointer; 
+      transition: filter 0.3s ease, stroke-width 0.3s ease; 
+    }
+
+    /* When the hidden checkbox is checked, show the label and highlight the slice */
+    #trigger-a:checked ~ .pie-g-a .pie-data { opacity: 1; }
+    #trigger-a:checked ~ .pie-g-a .pie-slice { filter: brightness(1.2); stroke-width: 34; }
+    
+    #trigger-b:checked ~ .pie-g-b .pie-data { opacity: 1; }
+    #trigger-b:checked ~ .pie-g-b .pie-slice { filter: brightness(1.2); stroke-width: 34; }
+
+    #trigger-c:checked ~ .pie-g-c .pie-data { opacity: 1; }
+    #trigger-c:checked ~ .pie-g-c .pie-slice { filter: brightness(1.2); stroke-width: 34; }
+
+    #trigger-d:checked ~ .pie-g-d .pie-data { opacity: 1; }
+    #trigger-d:checked ~ .pie-g-d .pie-slice { filter: brightness(1.2); stroke-width: 34; }
+  `}</style>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
+    
+    <svg viewBox="0 0 32 32" style={{ width: '280px', height: '280px', borderRadius: '50%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
+      
+      {/* Hidden Triggers */}
+      <foreignObject width="0" height="0">
+        <input type="checkbox" id="trigger-c" className="pie-trigger" />
+        <input type="checkbox" id="trigger-b" className="pie-trigger" />
+        <input type="checkbox" id="trigger-a" className="pie-trigger" />
+        <input type="checkbox" id="trigger-d" className="pie-trigger" />
+      </foreignObject>
+
+      {/* Category C - 40% */}
+      <g className="pie-g-c">
+        <label htmlFor="trigger-c">
+          <circle className="pie-slice" r="16" cx="16" cy="16" fill="transparent" stroke="#018571" strokeWidth="32" strokeDasharray="40 100" />
+        </label>
+        <text className="pie-data" x="16" y="17.5" transform="rotate(90 16 16)">40%</text>
+      </g>
+      
+      {/* Category B - 30% */}
+      <g className="pie-g-b">
+        <label htmlFor="trigger-b">
+          <circle className="pie-slice" r="16" cx="16" cy="16" fill="transparent" stroke="#A6611A" strokeWidth="32" strokeDasharray="30 100" strokeDashoffset="-40" />
+        </label>
+        <text className="pie-data" x="16" y="17.5" transform="rotate(90 16 16)">30%</text>
+      </g>
+      
+      {/* Category A - 20% */}
+      <g className="pie-g-a">
+        <label htmlFor="trigger-a">
+          <circle className="pie-slice" r="16" cx="16" cy="16" fill="transparent" stroke="#DFC27D" strokeWidth="32" strokeDasharray="20 100" strokeDashoffset="-70" />
+        </label>
+        <text className="pie-data" x="16" y="17.5" transform="rotate(90 16 16)">20%</text>
+      </g>
+      
+      {/* Category D - 10% */}
+      <g className="pie-g-d">
+        <label htmlFor="trigger-d">
+          <circle className="pie-slice" r="16" cx="16" cy="16" fill="transparent" stroke="#80CDC1" strokeWidth="32" strokeDasharray="10 100" strokeDashoffset="-90" />
+        </label>
+        <text className="pie-data" x="16" y="17.5" transform="rotate(90 16 16)">10%</text>
+      </g>
+
+      {/* Center cutout */}
+      <circle r="6" cx="16" cy="16" fill="#ffffff" />
+    </svg>
+
+    <div style={{ flex: '1', minWidth: '200px' }}>
+      <p style={{ fontSize: '14px', color: '#64748b' }}>
+        <strong>Click any segment</strong> to toggle the specific population percentage.
+      </p>
+      <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px' }}>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#018571', marginRight: '8px' }}>■</span> Category C (40%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#A6611A', marginRight: '8px' }}>■</span> Category B (30%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#DFC27D', marginRight: '8px' }}>■</span> Category A (20%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#80CDC1', marginRight: '8px' }}>■</span> Category D (10%)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 ## Experimenting with juxtapose
 
 <iframe 
@@ -455,7 +554,7 @@ src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=40c85d
   />
   <TimelinePoint
     date="1973"
-    title="Bengal Atlas published"
+    title="Urban Design Plan"
     summary="By late 1973, the Loring Park Development Urban Design Plan had been developed and published by M. Paul Friedberg and Associates, and Barton-Aschman Associates, Inc. This comprehensive plan has been used by the City Council in its continuing implementation of the project."
   />
   <TimelinePoint
