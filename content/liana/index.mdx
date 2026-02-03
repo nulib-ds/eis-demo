@@ -32,45 +32,38 @@ Total population according to the 2000 census is 7,501, an increase of 14% since
   caption="Loring Park in 2025"
 />
 
-## Trial
-
-## The Loring Park Transformation
-
-<div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '20px', margin: '40px 0' }}>
+<div style={{ margin: '80px 0', fontFamily: 'serif', maxWidth: '800px' }}>
   
-  {/* Left Side: Sticky Visuals */}
-  <div style={{ flex: '1 1 300px', position: 'sticky', top: '20px', height: '400px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-    <div style={{ 
-      width: '250px', 
-      height: '250px', 
-      borderRadius: '50%', 
-      background: 'conic-gradient(#A6611A 0% 70%, #DFC27D 70% 100%)',
-      transition: 'all 0.5s ease',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-    }}>
-      {/* This circle stays here as the user scrolls */}
-    </div>
-    <p style={{ marginTop: '20px', fontWeight: 'bold', color: '#A6611A' }}>1970s Baseline</p>
-  </div>
+  <h3 style={{ fontSize: '1.8rem', color: '#444', marginBottom: '10px' }}>
+    A Half-Century of Growth
+  </h3>
+  <p style={{ fontStyle: 'italic', color: '#666', marginBottom: '60px' }}>
+    Scroll down to see the district's population fill the modern landscape.
+  </p>
 
-  {/* Right Side: Scrolling Narrative */}
-  <div style={{ flex: '1 1 300px' }}>
-    <div style={{ height: '300px', padding: '20px', marginBottom: '100px', background: '#f8fafc', borderRadius: '8px' }}>
-      <h4>1971: The Legislation</h4>
-      <p>The Minnesota State Legislature enacted the enabling legislation for the Loring Park Development District, authorizing tax increment financing.</p>
+  {/* Scroll Container */}
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '150px' }}>
+    
+    {/* 1970 Section */}
+    <div style={{ display: 'flex', alignItems: 'flex-end', gap: '30px' }}>
+      <div style={{ flex: '0 0 60px', textAlign: 'right', fontWeight: 'bold', color: '#A6611A' }}>1970</div>
+      <div style={{ flex: '1', height: '40px', background: '#f1f5f9', borderRadius: '4px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ 
+          position: 'sticky', 
+          top: '50%',
+          height: '100%', 
+          width: '14%', 
+          background: '#A6611A', 
+          borderRadius: '4px',
+          transition: 'width 1.5s ease-out' 
+        }}></div>
+      </div>
+      <div style={{ flex: '0 0 100px', fontSize: '14px', color: '#A6611A' }}>1,387 residents</div>
     </div>
 
-    <div style={{ height: '300px', padding: '20px', marginBottom: '100px', background: '#f1f5f9', borderRadius: '8px', borderLeft: '4px solid #A6611A' }}>
-      <h4>1973: The Design Plan</h4>
-      <p>M. Paul Friedberg and Associates published the Urban Design Plan, setting the stage for the physical transformation of the park area.</p>
-    </div>
-
-    <div style={{ height: '300px', padding: '20px', marginBottom: '100px', background: '#018571', color: '#fff', borderRadius: '8px' }}>
-      <h4>2020: Modern Density</h4>
-      <p>Today, the district has reached a population of 9,718, fulfilling the high-density vision established fifty years prior.</p>
-    </div>
-  </div>
-</div>
+    {/* Narrative Break */}
+    <div style={{ paddingLeft: '90px', borderLeft: '2px solid #DFC27D', marginLeft: '30px' }}>
+      <p style={{ lineHeight
 
 ## Experimenting with a bar graph
 
