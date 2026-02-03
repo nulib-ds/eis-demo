@@ -516,77 +516,84 @@ We can use something like this for our collection, e.g. to say: of our 144 docum
   </div>
 </div>
 
-## pie chart v5
+## v 5
 
-{/* Loring Park Pie Chart - Canopy Optimized */}
-<div id="loring-pie-container" style={{ margin: '60px 0', fontFamily: 'sans-serif' }}>
+{/* Loring Park Pie Chart - Click Interactive Version */}
+<div id="loring-pie-click" style={{ margin: '60px 0', fontFamily: 'sans-serif' }}>
   <style>{`
-    #loring-pie-container .pie-chart {
+    #loring-pie-click .pie-visual {
       width: 250px;
       height: 250px;
       border-radius: 50%;
-      position: relative;
-      /* The Palette: #018571 (40%), #A6611A (30%), #DFC27D (20%), #80CDC1 (10%) */
-      background: conic-gradient(
-        #018571 0% 40%, 
-        #A6611A 40% 70%, 
-        #DFC27D 70% 90%, 
-        #80CDC1 90% 100%
-      );
-      transition: transform 0.3s ease;
-      cursor: pointer;
+      background: conic-gradient(#018571 0% 40%, #A6611A 40% 70%, #DFC27D 70% 90%, #80CDC1 90% 100%);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-    #loring-pie-container .pie-chart:hover { transform: scale(1.03); }
-    #loring-pie-container .legend-item { display: flex; align-items: center; margin-bottom: 12px; }
-    #loring-pie-container .swatch { width: 14px; height: 14px; border-radius: 3px; margin-right: 12px; }
-    #loring-pie-container .value-label { opacity: 0; transition: 0.3s ease; font-weight: bold; color: #1e3a8a; }
-    #loring-pie-container .legend-item:hover .value-label { opacity: 1; }
+    #loring-pie-click .legend-link {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      text-decoration: none;
+      color: inherit;
+      padding: 5px;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    #loring-pie-click .legend-link:hover { background: #f1f5f9; }
+    #loring-pie-click .swatch { width: 14px; height: 14px; border-radius: 3px; margin-right: 12px; }
+    
+    /* The Click Logic: Hide values by default */
+    #loring-pie-click .pct-val { 
+      margin-left: auto; 
+      font-weight: bold; 
+      opacity: 0; 
+      transition: opacity 0.3s; 
+      color: #018571; 
+    }
+
+    /* Show value when the specific ID is "targeted" via click */
+    #loring-pie-click .legend-link:focus .pct-val,
+    #loring-pie-click .legend-link:active .pct-val { 
+      opacity: 1; 
+    }
   `}</style>
 
-  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '40px' }}>
-    Loring Park Redevelopment Project
+  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '30px' }}>
+    Loring Park Demographic Data
   </h3>
 
-  <div style={{ display: 'flex', alignItems: 'center', gap: '50px', flexWrap: 'wrap' }}>
-    
-    {/* The Pie Chart itself (pure CSS) */}
-    <div className="pie-chart"></div>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
+    <div className="pie-visual"></div>
 
-    {/* The Legend (Interactive) */}
-    <div style={{ flex: 1, minWidth: '200px' }}>
-      <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '20px' }}>
-        Hover over labels to reveal data percentages.
+    <div style={{ flex: '1', minWidth: '220px' }}>
+      <p style={{ fontSize: '14px', color: '#64748b', marginBottom: '15px' }}>
+        Click a category to reveal its percentage.
       </p>
 
-      <div className="legend-item">
+      <a href="#reveal" className="legend-link" tabIndex="1">
         <div className="swatch" style={{ backgroundColor: '#018571' }}></div>
-        <span style={{ fontSize: '15px' }}>Category C: </span>
-        <span className="value-label" style={{ marginLeft: '8px' }}> 40%</span>
-      </div>
+        <span>Category C</span>
+        <span className="pct-val">40%</span>
+      </a>
 
-      <div className="legend-item">
+      <a href="#reveal" className="legend-link" tabIndex="2">
         <div className="swatch" style={{ backgroundColor: '#A6611A' }}></div>
-        <span style={{ fontSize: '15px' }}>Category B: </span>
-        <span className="value-label" style={{ marginLeft: '8px' }}> 30%</span>
-      </div>
+        <span>Category B</span>
+        <span className="pct-val">30%</span>
+      </a>
 
-      <div className="legend-item">
+      <a href="#reveal" className="legend-link" tabIndex="3">
         <div className="swatch" style={{ backgroundColor: '#DFC27D' }}></div>
-        <span style={{ fontSize: '15px' }}>Category A: </span>
-        <span className="value-label" style={{ marginLeft: '8px' }}> 20%</span>
-      </div>
+        <span>Category A</span>
+        <span className="pct-val">20%</span>
+      </a>
 
-      <div className="legend-item">
+      <div className="legend-link">
         <div className="swatch" style={{ backgroundColor: '#80CDC1' }}></div>
-        <span style={{ fontSize: '15px' }}>Category D: </span>
-        <span className="value-label" style={{ marginLeft: '8px' }}> 10%</span>
+        <span>Category D</span>
+        <span className="pct-val" style={{ opacity: 1, color: '#94a3b8' }}>10%</span>
       </div>
     </div>
   </div>
-
-  <p style={{ fontSize: '12px', color: '#64748b', marginTop: '25px', fontStyle: 'italic' }}>
-    Data visual based on current Loring Park projections. [Source: EIS]
-  </p>
 </div>
 
 ## Pie chart v6
