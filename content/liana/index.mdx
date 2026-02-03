@@ -32,38 +32,83 @@ Total population according to the 2000 census is 7,501, an increase of 14% since
   caption="Loring Park in 2025"
 />
 
-<div style={{ margin: '80px 0', fontFamily: 'serif', maxWidth: '800px' }}>
-  
-  <h3 style={{ fontSize: '1.8rem', color: '#444', marginBottom: '10px' }}>
-    A Half-Century of Growth
-  </h3>
-  <p style={{ fontStyle: 'italic', color: '#666', marginBottom: '60px' }}>
-    Scroll down to see the district's population fill the modern landscape.
-  </p>
+## exp 
 
-  {/* Scroll Container */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '150px' }}>
+<div style={{ margin: '60px 0', fontFamily: 'serif' }}>
+  
+  {/* The Parent Container: Needs height to allow for scrolling */}
+  <div style={{ position: 'relative', height: '1500px', display: 'flex', flexDirection: 'column' }}>
     
-    {/* 1970 Section */}
-    <div style={{ display: 'flex', alignItems: 'flex-end', gap: '30px' }}>
-      <div style={{ flex: '0 0 60px', textAlign: 'right', fontWeight: 'bold', color: '#A6611A' }}>1970</div>
-      <div style={{ flex: '1', height: '40px', background: '#f1f5f9', borderRadius: '4px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ 
-          position: 'sticky', 
-          top: '50%',
-          height: '100%', 
-          width: '14%', 
-          background: '#A6611A', 
-          borderRadius: '4px',
-          transition: 'width 1.5s ease-out' 
-        }}></div>
+    {/* STICKY SIDE: The Graph that stays on screen */}
+    <div style={{ 
+      position: 'sticky', 
+      top: '20%', 
+      height: '400px', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'flex-end',
+      zIndex: 1 
+    }}>
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '40px', height: '250px', borderBottom: '2px solid #cbd5e1', padding: '0 40px' }}>
+        
+        {/* Dynamic Bar */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ 
+            width: '80px', 
+            height: '220px', 
+            background: 'linear-gradient(to top, #A6611A, #018571)', 
+            borderRadius: '6px 6px 0 0',
+            transition: 'all 0.5s ease'
+          }}></div>
+          <span style={{ marginTop: '10px', fontSize: '14px', fontWeight: 'bold' }}>Population Density</span>
+        </div>
+
       </div>
-      <div style={{ flex: '0 0 100px', fontSize: '14px', color: '#A6611A' }}>1,387 residents</div>
+      <p style={{ marginTop: '20px', fontStyle: 'italic', color: '#64748b' }}>Scroll to progress through time</p>
     </div>
 
-    {/* Narrative Break */}
-    <div style={{ paddingLeft: '90px', borderLeft: '2px solid #DFC27D', marginLeft: '30px' }}>
-      <p style={{ lineHeight
+    {/* SCROLLING SIDE: The Narrative that triggers the "feel" of change */}
+    <div style={{ marginTop: '-350px' }}>
+      
+      {/* 1970s Section */}
+      <div style={{ height: '600px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ 
+          maxWidth: '300px', 
+          background: 'rgba(255, 255, 255, 0.9)', 
+          padding: '25px', 
+          borderRadius: '8px', 
+          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          borderLeft: '5px solid #A6611A'
+        }}>
+          <h4 style={{ margin: '0 0 10px 0', color: '#A6611A' }}>1970: The Blueprint</h4>
+          <p style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>
+            Loring Park begins as a "Redevelopment District." The population sits at 1,387 residents as the city clears land for a new high-density vision.
+          </p>
+        </div>
+      </div>
+
+      {/* 2020s Section */}
+      <div style={{ height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+        <div style={{ 
+          maxWidth: '300px', 
+          background: 'rgba(255, 255, 255, 0.9)', 
+          padding: '25px', 
+          borderRadius: '8px', 
+          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          borderRight: '5px solid #018571'
+        }}>
+          <h4 style={{ margin: '0 0 10px 0', color: '#018571' }}>2020: The Realization</h4>
+          <p style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>
+            Fifty years later, the bar has risen. With 9,718 residents, the district is now one of the most densely populated urban residential areas in Minneapolis.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
 
 ## Experimenting with a bar graph
 
