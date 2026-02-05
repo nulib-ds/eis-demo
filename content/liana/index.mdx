@@ -219,57 +219,89 @@ Total population according to the 2000 census is 7,501, an increase of 14% since
 
 ## hello! 
 
-<div style={{ margin: '40px 0', fontFamily: 'serif' }}>
-  <h3 style={{ marginBottom: '20px' }}>Loring Park Population Growth</h3>
-  
-  <div style={{ position: 'relative', height: '1800px' }}>
+<div style={{ margin: '60px 0', fontFamily: 'serif' }}>
+  <div style={{ position: 'relative', height: '3500px' }}>
     
-    {/* STICKY CONTAINER */}
-    <div style={{ position: 'sticky', top: '100px', height: '300px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', gap: '10px', borderBottom: '2px solid grey' }}>
+    {/* STICKY CONTAINER: This stays in place as you scroll */}
+    <div style={{ 
+      position: 'sticky', 
+      top: '20vh', 
+      height: '500px', 
+      width: '100%', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      zIndex: 1 
+    }}>
+      <h3 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '30px', textAlign: 'center' }}>
+        Demographic Evolution
+      </h3>
       
-      {/* 1960 */}
-      <div style={{ width: '40px', height: '57px', backgroundColor: '#93c5fd' }}>
-        <div style={{ fontSize: '10px', textAlign: 'center', marginTop: '-20px' }}>1,968</div>
-      </div>
-
-      {/* 1970 */}
-      <div style={{ width: '40px', height: '40px', backgroundColor: '#A6611A' }}>
-        <div style={{ fontSize: '10px', textAlign: 'center', marginTop: '-20px' }}>1,387</div>
-      </div>
-
-      {/* 2000 */}
-      <div style={{ width: '40px', height: '216px', backgroundColor: '#3b82f6' }}>
-        <div style={{ fontSize: '10px', textAlign: 'center', marginTop: '-20px' }}>7,501</div>
-      </div>
-
-      {/* 2020 */}
-      <div style={{ width: '40px', height: '280px', backgroundColor: '#018571' }}>
-        <div style={{ fontSize: '10px', textAlign: 'center', marginTop: '-20px' }}>9,718</div>
-      </div>
-
-    </div>
-
-    {/* SCROLLING NARRATIVE */}
-    <div style={{ position: 'relative' }}>
-      <div style={{ height: '600px', paddingTop: '50px' }}>
-        <div style={{ maxWidth: '200px', padding: '15px', border: '1px solid #A6611A' }}>
-          <strong>1960-1970</strong>: The dip before the redevelopment began.
+      <div style={{ position: 'relative', width: '300px', height: '300px', borderBottom: '2px solid #cbd5e1' }}>
+        
+        {/* Each bar is placed in the exact same spot, but only the one 
+            associated with the current "narrative box" will be on top */}
+        
+        {/* 1960: Baseline (Light Blue) */}
+        <div style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '100px', height: '60px', backgroundColor: '#93c5fd', borderRadius: '6px 6px 0 0', zIndex: 1 }}>
+          <div style={{ position: 'absolute', top: '-30px', width: '100%', textAlign: 'center', fontWeight: 'bold', color: '#1e40af' }}>1,968</div>
         </div>
-      </div>
 
-      <div style={{ height: '600px', display: 'flex', justifyContent: 'flex-end' }}>
-        <div style={{ maxWidth: '200px', padding: '15px', border: '1px solid #3b82f6' }}>
-          <strong>2000</strong>: High-density growth begins.
+        {/* 1970: Redevelopment (Brown) */}
+        <div style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '100px', height: '42px', backgroundColor: '#A6611A', borderRadius: '6px 6px 0 0', zIndex: 2 }}>
+          <div style={{ position: 'absolute', top: '-30px', width: '100%', textAlign: 'center', fontWeight: 'bold', color: '#A6611A' }}>1,387</div>
         </div>
-      </div>
 
-      <div style={{ height: '600px' }}>
-        <div style={{ maxWidth: '200px', padding: '15px', border: '1px solid #018571', background: '#018571', color: 'white' }}>
-          <strong>2020</strong>: The modern peak of the Loring Park district.
+        {/* 2000: Expansion (Medium Blue) */}
+        <div style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '100px', height: '220px', backgroundColor: '#3b82f6', borderRadius: '6px 6px 0 0', zIndex: 3 }}>
+          <div style={{ position: 'absolute', top: '-30px', width: '100%', textAlign: 'center', fontWeight: 'bold', color: '#1e3a8a' }}>7,501</div>
         </div>
+
+        {/* 2020: Modern Era (Teal) */}
+        <div style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '100px', height: '290px', backgroundColor: '#018571', borderRadius: '6px 6px 0 0', zIndex: 4 }}>
+          <div style={{ position: 'absolute', top: '-30px', width: '100%', textAlign: 'center', fontWeight: 'bold', color: '#018571' }}>9,718</div>
+        </div>
+
       </div>
     </div>
 
+    {/* NARRATIVE BLOCKS: These act as the "drivers" for the animation */}
+    <div style={{ position: 'relative', zIndex: 10 }}>
+      
+      {/* Block 1: 1960s */}
+      <div style={{ height: '800px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ background: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', maxWidth: '350px', borderLeft: '6px solid #93c5fd' }}>
+          <h4 style={{ margin: '0 0 10px 0', color: '#1e40af' }}>1960: The Old Loring</h4>
+          <p style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>A stable residential base exists before the push for modern redevelopment begins in the district.</p>
+        </div>
+      </div>
+
+      {/* Block 2: 1970s */}
+      <div style={{ height: '800px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+        <div style={{ background: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', maxWidth: '350px', borderRight: '6px solid #A6611A' }}>
+          <h4 style={{ margin: '0 0 10px 0', color: '#A6611A' }}>1970: The Transition</h4>
+          <p style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>Population dips as land is cleared for the M. Paul Friedberg Urban Design Plan. The district is in a state of flux.</p>
+        </div>
+      </div>
+
+      {/* Block 3: 2000s */}
+      <div style={{ height: '800px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ background: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', maxWidth: '350px', borderLeft: '6px solid #3b82f6' }}>
+          <h4 style={{ margin: '0 0 10px 0', color: '#1e3a8a' }}>2000: High-Density Success</h4>
+          <p style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>Decades of policy and new construction result in a massive population surge, nearly tripling the baseline.</p>
+        </div>
+      </div>
+
+      {/* Block 4: 2020s */}
+      <div style={{ height: '800px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+        <div style={{ background: '#018571', color: '#ffffff', padding: '30px', borderRadius: '12px', boxShadow: '0 10px 25px rgba(1, 133, 113, 0.3)', maxWidth: '350px' }}>
+          <h4 style={{ margin: '0 0 10px 0', color: '#ffffff' }}>2020: The Modern Peak</h4>
+          <p style={{ fontSize: '15px', lineHeight: '1.6', margin: 0 }}>Today, Loring Park is the densest residential area in the city, fulfilling the 50-year-old vision for urban growth.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
