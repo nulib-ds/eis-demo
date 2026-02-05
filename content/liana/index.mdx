@@ -217,6 +217,91 @@ Total population according to the 2000 census is 7,501, an increase of 14% since
   </div>
 </div>
 
+## v3 interactive 
+
+<div style={{ margin: '60px 0', fontFamily: 'serif' }}>
+  <div style={{ position: 'relative', height: '3200px' }}> {/* Increased height for 4 stages */}
+    
+    {/* STICKY GRAPH CONTAINER */}
+    <div style={{ 
+      position: 'sticky', 
+      top: '150px', 
+      height: '400px', 
+      width: '100%', 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      zIndex: 1 
+    }}>
+      
+      <div style={{ position: 'relative', width: '200px', height: '300px', borderBottom: '2px solid #cbd5e1' }}>
+        
+        {/* 1960 Bar - Baseline */}
+        <div style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '80px', height: '57px', backgroundColor: '#93c5fd', borderRadius: '4px 4px 0 0', zIndex: 1 }}>
+          <span style={{ position: 'absolute', top: '-25px', width: '100%', textAlign: 'center', fontSize: '12px', color: '#93c5fd', fontWeight: 'bold' }}>1,968</span>
+        </div>
+
+        {/* 1970 Bar Overlay */}
+        <div style={{ position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '80px', height: '40px', backgroundColor: '#A6611A', borderRadius: '4px 4px 0 0', zIndex: 2 }}>
+           <span style={{ position: 'absolute', top: '-25px', width: '100%', textAlign: 'center', fontSize: '12px', color: '#A6611A', fontWeight: 'bold' }}>1,387</span>
+        </div>
+
+        {/* 2000 Bar Overlay - Revealed by Scroll */}
+        <div style={{ 
+          position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '80px', height: '216px', backgroundColor: '#3b82f6', borderRadius: '4px 4px 0 0', zIndex: 3,
+          clipPath: 'inset(100% 0 0 0)' /* Hidden until revealed */
+        }} className="reveal-2000">
+           <span style={{ position: 'absolute', top: '-25px', width: '100%', textAlign: 'center', fontSize: '12px', color: '#3b82f6', fontWeight: 'bold' }}>7,501</span>
+        </div>
+
+        {/* 2020 Bar Overlay - Final Stage */}
+        <div style={{ 
+          position: 'absolute', bottom: '0', left: '50%', transform: 'translateX(-50%)', width: '80px', height: '280px', backgroundColor: '#018571', borderRadius: '4px 4px 0 0', zIndex: 4,
+          clipPath: 'inset(100% 0 0 0)' 
+        }} className="reveal-2020">
+           <span style={{ position: 'absolute', top: '-25px', width: '100%', textAlign: 'center', fontSize: '12px', color: '#018571', fontWeight: 'bold' }}>9,718</span>
+        </div>
+      </div>
+      <p style={{ marginTop: '20px', fontSize: '14px', color: '#64748b' }}>Evolution of District Population</p>
+    </div>
+
+    {/* SCROLLING NARRATIVE TRIGGERS */}
+    <div style={{ position: 'relative', zIndex: 10 }}>
+      
+      {/* 1960-1970 Section */}
+      <div style={{ height: '800px', display: 'flex', alignItems: 'flex-start' }}>
+        <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', maxWidth: '280px', borderLeft: '4px solid #A6611A' }}>
+          <h4 style={{ color: '#A6611A', marginTop: '0' }}>1960–1970: Pre-Redevelopment</h4>
+          <p style={{ fontSize: '14px', margin: '0' }}>The population actually dipped during this decade as land was cleared for the new Urban Design Plan.</p>
+        </div>
+      </div>
+
+      {/* 2000 Section - Growth Trigger */}
+      <div style={{ height: '800px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+        <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)', maxWidth: '280px', borderRight: '4px solid #3b82f6' }}>
+          <h4 style={{ color: '#3b82f6', marginTop: '0' }}>2000: Expansion</h4>
+          <p style={{ fontSize: '14px', margin: '0' }}>By the turn of the century, new residential towers had dramatically increased the area's density.</p>
+        </div>
+      </div>
+
+      {/* 2020 Section - Final Trigger */}
+      <div style={{ height: '800px', display: 'flex', alignItems: 'center' }}>
+        <div style={{ background: '#018571', color: '#fff', padding: '20px', borderRadius: '8px', maxWidth: '280px', boxShadow: '0 10px 20px rgba(1, 133, 113, 0.2)' }}>
+          <h4 style={{ marginTop: '0' }}>2020: The Modern Peak</h4>
+          <p style={{ fontSize: '14px', margin: '0' }}>Reaching nearly 10,000 residents, Loring Park stands as a premier example of high-density urban living.</p>
+        </div>
+      </div>
+    </div>
+
+    {/* CSS HOVER/SCROLL SIMULATION HACK */}
+    <style>{`
+      .reveal-2000:hover, .reveal-2000:active { clip-path: inset(0 0 0 0) !important; }
+      /* Note: In static Canopy, we rely on the user scrolling these layers over each other */
+    `}</style>
+
+  </div>
+</div>
 
 ## Experimenting with a bar graph
 
