@@ -11,7 +11,15 @@ title: Loring Park Neighborhood
 
 <Container>
 
+##hi
 ## This subpage is a bunch of experimentations for visualization of EIS documents data
+
+## For the Priced Out exhibition
+
+### 1970s
+
+
+## hello test
 
 ## Demographics 
 
@@ -486,6 +494,139 @@ Total population according to the 2000 census is 7,501, an increase of 14% since
     Hover over each column to reveal exact population numbers. <br />
     *Portion of district subject to redevelopment. [Source: EIS & Wikipedia]
   </p>
+</div>
+
+## pie chart v2 hopefully not exploding
+<div style={{ margin: '40px 0', fontFamily: 'sans-serif', maxWidth: '600px' }}>
+  <style>{`
+    .pie-segment { 
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+      cursor: pointer; 
+      outline: none;
+      transform-origin: center;
+    }
+    .percentage-label { 
+      opacity: 0; 
+      transition: opacity 0.3s ease; 
+      pointer-events: none; 
+      font-weight: bold;
+      font-size: 8px;
+      text-anchor: middle;
+      dominant-baseline: middle;
+    }
+    /* Hover/Focus state: Scale up and brighten */
+    .pie-segment:hover, .pie-segment:focus { 
+      filter: brightness(1.1);
+      transform: scale(1.08);
+      z-index: 10;
+    }
+    /* Show the label when the segment is hovered or clicked (focused) */
+    .pie-segment:hover + .percentage-label,
+    .pie-segment:focus + .percentage-label { 
+      opacity: 1; 
+    }
+  `}</style>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
+    
+    <svg viewBox="0 0 64 64" style={{ width: '300px', height: '300px', transform: 'rotate(-90deg)', overflow: 'visible' }}>
+      
+      {/* Category C - 40% (0 to 40) */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="32" cy="32" fill="transparent" 
+        stroke="#018571" strokeWidth="32" strokeDasharray="40 60.4" strokeDashoffset="0" />
+      <text className="percentage-label" x="50" y="20" transform="rotate(90, 50, 20)" style={{ fill: '#fff' }}>40%</text>
+      
+      {/* Category B - 30% (40 to 70) */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="32" cy="32" fill="transparent" 
+        stroke="#A6611A" strokeWidth="32" strokeDasharray="30 70.4" strokeDashoffset="-40" />
+      <text className="percentage-label" x="15" y="15" transform="rotate(90, 15, 15)" style={{ fill: '#fff' }}>30%</text>
+      
+      {/* Category A - 20% (70 to 90) */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="32" cy="32" fill="transparent" 
+        stroke="#DFC27D" strokeWidth="32" strokeDasharray="20 80.4" strokeDashoffset="-70" />
+      <text className="percentage-label" x="15" y="50" transform="rotate(90, 15, 50)" style={{ fill: '#A6611A' }}>20%</text>
+      
+      {/* Category D - 10% (90 to 100) */}
+      <circle tabIndex="0" className="pie-segment" r="16" cx="32" cy="32" fill="transparent" 
+        stroke="#80CDC1" strokeWidth="32" strokeDasharray="10 90.4" strokeDashoffset="-90" />
+      <text className="percentage-label" x="45" y="50" transform="rotate(90, 45, 50)" style={{ fill: '#018571' }}>10%</text>
+
+    </svg>
+
+    <div style={{ flex: '1', minWidth: '200px' }}>
+      <h3 style={{ margin: '0 0 10px 0', color: '#1e293b' }}>Demographic Split</h3>
+      <p style={{ fontSize: '14px', color: '#64748b', lineHeight: '1.5' }}>
+        <strong>Click or hover</strong> on a segment to view the exact population percentage.
+      </p>
+      <ul style={{ listStyle: 'none', padding: 0, fontSize: '14px', color: '#334155' }}>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#018571', marginRight: '8px' }}>●</span> Category C (40%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#A6611A', marginRight: '8px' }}>●</span> Category B (30%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#DFC27D', marginRight: '8px' }}>●</span> Category A (20%)</li>
+        <li style={{ marginBottom: '8px' }}><span style={{ color: '#80CDC1', marginRight: '8px' }}>●</span> Category D (10%)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+## pie chart hopefully not exploding 
+<div style={{ margin: '40px 0', fontFamily: 'sans-serif', maxWidth: '500px' }}>
+  <style>{`
+    .pie-segment { 
+      transition: all 0.3s ease; 
+      cursor: pointer; 
+      outline: none;
+      transform-origin: center;
+    }
+    .percentage-label { 
+      opacity: 0; 
+      transition: opacity 0.3s ease; 
+      pointer-events: none; 
+      font-weight: bold;
+    }
+    .pie-segment:focus { 
+      filter: brightness(1.1);
+      transform: scale(1.05);
+    }
+    .pie-segment:focus + .percentage-label { 
+      opacity: 1; 
+    }
+  `}</style>
+
+  <div style={{ display: 'flex', alignItems: 'center', gap: '30px', flexWrap: 'wrap' }}>
+    
+    <svg viewBox="0 0 32 32" style={{ width: '250px', height: '250px', borderRadius: '50%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
+      
+      {/* Category C - 40% */}
+      <circle tabIndex="0" className="pie-segment" r="8" cx="16" cy="16" fill="transparent" stroke="#018571" strokeWidth="16" strokeDasharray="40 100" />
+      <text className="percentage-label" x="24" y="-20" transform="rotate(90)" style={{ fontSize: '4px', fill: '#018571' }}>40%</text>
+      
+      {/* Category B - 30% */}
+      <circle tabIndex="0" className="pie-segment" r="8" cx="16" cy="16" fill="transparent" stroke="#A6611A" strokeWidth="16" strokeDasharray="30 100" strokeDashoffset="-40" />
+      <text className="percentage-label" x="8" y="-28" transform="rotate(90)" style={{ fontSize: '4px', fill: '#A6611A' }}>30%</text>
+      
+      {/* Category A - 20% */}
+      <circle tabIndex="0" className="pie-segment" r="8" cx="16" cy="16" fill="transparent" stroke="#DFC27D" strokeWidth="16" strokeDasharray="20 100" strokeDashoffset="-70" />
+      <text className="percentage-label" x="-10" y="-24" transform="rotate(90)" style={{ fontSize: '4px', fill: '#DFC27D' }}>20%</text>
+      
+      {/* Category D - 10% */}
+      <circle tabIndex="0" className="pie-segment" r="8" cx="16" cy="16" fill="transparent" stroke="#80CDC1" strokeWidth="16" strokeDasharray="10 100" strokeDashoffset="-90" />
+      <text className="percentage-label" x="-12" y="-12" transform="rotate(90)" style={{ fontSize: '4px', fill: '#80CDC1' }}>10%</text>
+
+    </svg>
+
+    <div style={{ flex: '1', minWidth: '200px' }}>
+      <p style={{ fontSize: '14px', color: '#64748b' }}>
+        <strong>Click a segment</strong> to reveal the population percentage.
+      </p>
+      <ul style={{ listStyle: 'none', padding: 0, fontSize: '13px' }}>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#018571' }}>●</span> Category C</li>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#A6611A' }}>●</span> Category B</li>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#DFC27D' }}>●</span> Category A</li>
+        <li style={{ marginBottom: '5px' }}><span style={{ color: '#80CDC1' }}>●</span> Category D</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 ## pie chart; trial 1
