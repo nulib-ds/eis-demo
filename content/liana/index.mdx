@@ -10,115 +10,7 @@ title: Loring Park Neighborhood
 
 
 <Container>
-
-## hi
 ## This subpage is a bunch of experimentations for visualization of EIS documents data
-
-## v18 
-<div style={{ margin: '5vw auto', maxWidth: '85vw', backgroundColor: '#fff', padding: '4vw', borderRadius: '2vw', boxShadow: '0 1vw 3vw rgba(0,0,0,0.05)', fontFamily: 'sans-serif' }}>
-  <style>{`
-    /* Hidden logic triggers */
-    .pie-radio { position: absolute; opacity: 0; width: 0; height: 0; }
-    
-    .pie-shell { position: relative; width: 32vw; height: 32vw; min-width: 280px; min-height: 280px; margin: 0 auto; }
-    .pie-seg { cursor: pointer; transition: all 0.3s ease; stroke-width: 16; fill: none; }
-    
-    /* Reveal logic: Show the specific percentage when the corresponding radio is checked */
-    #r-fil:checked ~ .pie-shell .val-fil { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    #r-fil:checked ~ .pie-shell #seg-fil { stroke-width: 19; filter: brightness(1.1); }
-
-    #r-chi:checked ~ .pie-shell .val-chi { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    #r-chi:checked ~ .pie-shell #seg-chi { stroke-width: 19; filter: brightness(1.1); }
-
-    #r-haw:checked ~ .pie-shell .val-haw { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    #r-haw:checked ~ .pie-shell #seg-haw { stroke-width: 19; filter: brightness(1.1); }
-
-    #r-oth:checked ~ .pie-shell .val-oth { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    #r-oth:checked ~ .pie-shell #seg-oth { stroke-width: 19; filter: brightness(1.1); }
-
-    /* Centered label styling */
-    .pct-val { 
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.5); 
-      font-size: 4vw; font-weight: 900; opacity: 0; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-      pointer-events: none; z-index: 50; 
-    }
-    .select-prompt { 
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-      font-size: 2vw; font-weight: 600; color: #94a3b8; transition: opacity 0.2s; 
-    }
-    .pie-radio:checked ~ .pie-shell .select-prompt { opacity: 0; }
-  `}</style>
-
-  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '6vw', alignItems: 'center' }}>
-    
-    {/* Logic Triggers */}
-    <input type="radio" name="priced-out-data" id="r-fil" className="pie-radio" />
-    <input type="radio" name="priced-out-data" id="r-chi" className="pie-radio" />
-    <input type="radio" name="priced-out-data" id="r-haw" className="pie-radio" />
-    <input type="radio" name="priced-out-data" id="r-oth" className="pie-radio" />
-
-    {/* THE GRAPH: Viewport-scaled with label-linked click interactivity */}
-    <div className="pie-shell">
-      <svg viewBox="0 0 32 32" style={{ width: '100%', height: '100%', transform: 'rotate(-90deg)', overflow: 'visible' }}>
-        
-        {/* Filipino - 56% (#842D73) */}
-        <label htmlFor="r-fil" style={{ cursor: 'pointer' }}>
-          <circle id="seg-fil" className="pie-seg" r="8" cx="16" cy="16" stroke="#842D73" pathLength="100" strokeDasharray="56 100" />
-        </label>
-        
-        {/* Chinese - 12% (#EE316B) - Starts at 56 */}
-        <label htmlFor="r-chi" style={{ cursor: 'pointer' }}>
-          <circle id="seg-chi" className="pie-seg" r="8" cx="16" cy="16" stroke="#EE316B" pathLength="100" strokeDasharray="12 100" strokeDashoffset="-56" />
-        </label>
-        
-        {/* Hawaiian - 12% (#FFB137) - Starts at 68 */}
-        <label htmlFor="r-haw" style={{ cursor: 'pointer' }}>
-          <circle id="seg-haw" className="pie-seg" r="8" cx="16" cy="16" stroke="#FFB137" pathLength="100" strokeDasharray="12 100" strokeDashoffset="-68" />
-        </label>
-        
-        {/* Other - 20% (#FBDFB6) - Starts at 80 */}
-        <label htmlFor="r-oth" style={{ cursor: 'pointer' }}>
-          <circle id="seg-oth" className="pie-seg" r="8" cx="16" cy="16" stroke="#FBDFB6" pathLength="100" strokeDasharray="20 100" strokeDashoffset="-80" />
-        </label>
-
-        {/* Center cutout */}
-        <circle r="4.5" cx="16" cy="16" fill="white" />
-      </svg>
-      
-      {/* Center Percentage Display */}
-      <div className="select-prompt">Select</div>
-      <div className="pct-val val-fil" style={{ color: '#842D73' }}>56%</div>
-      <div className="pct-val val-chi" style={{ color: '#EE316B' }}>12%</div>
-      <div className="pct-val val-haw" style={{ color: '#FFB137' }}>12%</div>
-      <div className="pct-val val-oth" style={{ color: '#94a3b8' }}>20%</div>
-    </div>
-
-    {/* THE INDEX: Static reference legend */}
-    <div style={{ padding: '1vw' }}>
-      <h2 style={{ fontSize: '2.4vw', marginBottom: '1vw', color: '#1e293b' }}>Priced Out: Resident Data</h2>
-      <p style={{ fontSize: '1.2vw', color: '#64748b', marginBottom: '2.5vw', lineHeight: '1.6' }}>
-        <strong>Click a colored segment</strong> on the graph to reveal the population percentage for that group.
-      </p>
-      
-      <div style={{ display: 'grid', gap: '1.2vw' }}>
-        {[
-          { name: 'Filipino', pct: '56%', color: '#842D73' },
-          { name: 'Chinese', pct: '12%', color: '#EE316B' },
-          { name: 'Hawaiian', pct: '12%', color: '#FFB137' },
-          { name: 'Other', pct: '20%', color: '#FBDFB6' }
-        ].map((item) => (
-          <div key={item.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1vw 1.5vw', background: '#f8fafc', borderRadius: '1vw' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1vw' }}>
-              <span style={{ width: '1.4vw', height: '1.4vw', backgroundColor: item.color, borderRadius: '0.4vw' }}></span>
-              <span style={{ fontWeight: '700', fontSize: '1.1vw', color: '#1e293b' }}>{item.name}</span>
-            </div>
-            <span style={{ fontWeight: '800', fontSize: '1.2vw', color: item.color === '#FBDFB6' ? '#94a3b8' : item.color }}>{item.pct}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
 
 ## v17
 <div style={{ margin: '5vw auto', maxWidth: '85vw', backgroundColor: '#fff', padding: '4vw', borderRadius: '2vw', boxShadow: '0 1vw 3vw rgba(0,0,0,0.05)', fontFamily: 'sans-serif' }}>
@@ -157,25 +49,25 @@ title: Loring Park Neighborhood
         
         {/* Filipino - 56% (#842D73) */}
         <g className="pie-unit" tabIndex="0">
-          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#842D73" pathLength="100" strokeDasharray="56 100" />
+          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#238b45" pathLength="100" strokeDasharray="56 100" />
           <text className="pct-label" x="16" y="17.5" transform="rotate(90 16 16)">56%</text>
         </g>
         
         {/* Chinese - 12% (#EE316B) - Starts at 56 */}
         <g className="pie-unit" tabIndex="0">
-          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#EE316B" pathLength="100" strokeDasharray="12 100" strokeDashoffset="-56" />
+          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#74c476" pathLength="100" strokeDasharray="12 100" strokeDashoffset="-56" />
           <text className="pct-label" x="16" y="17.5" transform="rotate(90 16 16)">12%</text>
         </g>
         
         {/* Hawaiian - 12% (#FFB137) - Starts at 68 */}
         <g className="pie-unit" tabIndex="0">
-          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#FFB137" pathLength="100" strokeDasharray="12 100" strokeDashoffset="-68" />
+          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#bae4b3" pathLength="100" strokeDasharray="12 100" strokeDashoffset="-68" />
           <text className="pct-label" x="16" y="17.5" transform="rotate(90 16 16)">12%</text>
         </g>
         
         {/* Other - 20% (#FBDFB6) - Starts at 80 */}
         <g className="pie-unit" tabIndex="0">
-          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#FBDFB6" pathLength="100" strokeDasharray="20 100" strokeDashoffset="-80" />
+          <circle className="pie-seg" r="8" cx="16" cy="16" stroke="#edf8e9" pathLength="100" strokeDasharray="20 100" strokeDashoffset="-80" />
           <text className="pct-label" x="16" y="17.5" transform="rotate(90 16 16)">20%</text>
         </g>
 
@@ -194,10 +86,10 @@ title: Loring Park Neighborhood
       
       <div style={{ display: 'grid', gap: '1.2vw' }}>
         {[
-          { name: 'Filipino', pct: '56%', color: '#842D73' },
-          { name: 'Chinese', pct: '12%', color: '#EE316B' },
-          { name: 'Hawaiian', pct: '12%', color: '#FFB137' },
-          { name: 'Other', pct: '20%', color: '#FBDFB6' }
+          { name: 'Filipino', pct: '56%', color: '#238b45' },
+          { name: 'Chinese', pct: '12%', color: '#74c476' },
+          { name: 'Hawaiian', pct: '12%', color: '#bae4b3' },
+          { name: 'Other', pct: '20%', color: '#edf8e9' }
         ].map((item) => (
           <div key={item.name} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1vw 1.5vw', background: '#f8fafc', borderRadius: '1vw' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1vw' }}>
@@ -302,7 +194,7 @@ title: Loring Park Neighborhood
   </div>
 </div>
 
-##v15
+## v15
 <div style={{ margin: '5vw auto', maxWidth: '85vw', backgroundColor: '#fff', padding: '4vw', borderRadius: '2vw', boxShadow: '0 1vw 3vw rgba(0,0,0,0.05)', fontFamily: 'sans-serif' }}>
   <style>{`
     /* Hidden logic triggers */
@@ -823,7 +715,7 @@ title: Loring Park Neighborhood
   </div>
 </div>
 
-##v10
+## v10
 <div style={{ margin: '5vw auto', maxWidth: '85vw', backgroundColor: '#fff', padding: '4vw', borderRadius: '2vw', boxShadow: '0 1vw 3vw rgba(0,0,0,0.05)', fontFamily: 'sans-serif' }}>
   <style>{`
     .pie-unit { outline: none; cursor: pointer; }
