@@ -12,6 +12,267 @@ title: Loring Park Neighborhood
 <Container>
 ## This subpage is a bunch of experimentations for visualization of EIS documents data
 
+## v20
+<div style={{ margin: '60px 0', fontFamily: 'sans-serif', textAlign: 'center' }}>
+
+  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '30px' }}>
+    Resident Demographics
+  </h3>
+
+  <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', alignItems: 'center', flexWrap: 'wrap' }}>
+
+    {/* PIE */}
+    <svg viewBox="0 0 32 32"
+         style={{ width: '300px', height: '300px', transform: 'rotate(-90deg)' }}>
+
+      {/* Background */}
+      <circle r="8" cx="16" cy="16"
+              fill="none"
+              stroke="#f1f5f9"
+              strokeWidth="16" />
+
+      {/* Filipino 56% */}
+      <circle
+        r="8" cx="16" cy="16"
+        fill="none"
+        stroke="#238b45"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="56 100">
+        <title>Filipino — 56%</title>
+      </circle>
+
+      {/* Chinese 12% */}
+      <circle
+        r="8" cx="16" cy="16"
+        fill="none"
+        stroke="#74c476"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="12 100"
+        strokeDashoffset="-56">
+        <title>Chinese — 12%</title>
+      </circle>
+
+      {/* Hawaiian 12% */}
+      <circle
+        r="8" cx="16" cy="16"
+        fill="none"
+        stroke="#bae4b3"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="12 100"
+        strokeDashoffset="-68">
+        <title>Hawaiian — 12%</title>
+      </circle>
+
+      {/* Other 20% */}
+      <circle
+        r="8" cx="16" cy="16"
+        fill="none"
+        stroke="#cbd5e1"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="20 100"
+        strokeDashoffset="-80">
+        <title>Other — 20%</title>
+      </circle>
+
+      {/* Center hole */}
+      <circle r="4.5" cx="16" cy="16" fill="white" />
+
+    </svg>
+
+    {/* LEGEND */}
+    <div style={{ textAlign: 'left', fontSize: '14px' }}>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#238b45', marginRight: '8px' }}></span>
+        Filipino — 56%
+      </div>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#74c476', marginRight: '8px' }}></span>
+        Chinese — 12%
+      </div>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#bae4b3', marginRight: '8px' }}></span>
+        Hawaiian — 12%
+      </div>
+
+      <div>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#cbd5e1', marginRight: '8px' }}></span>
+        Other — 20%
+      </div>
+
+    </div>
+
+  </div>
+
+  <p style={{ fontSize: '12px', color: '#64748b', marginTop: '20px', fontStyle: 'italic' }}>
+    Hover over each colored slice to see the percentage.
+  </p>
+
+</div>
+
+## v19
+<div style={{ margin: '60px 0', fontFamily: 'sans-serif', textAlign: 'center' }}>
+
+  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '40px' }}>
+    Resident Demographics (Click to Reveal)
+  </h3>
+
+  <svg viewBox="0 0 32 32"
+       style={{ width: '320px', height: '320px', transform: 'rotate(-90deg)' }}>
+
+    <circle r="8" cx="16" cy="16" fill="none" stroke="#f1f5f9" strokeWidth="16" />
+
+    <a href="#filipino">
+      <circle r="8" cx="16" cy="16" fill="none"
+        stroke="#238b45" strokeWidth="16"
+        pathLength="100" strokeDasharray="56 100" />
+    </a>
+
+    <a href="#chinese">
+      <circle r="8" cx="16" cy="16" fill="none"
+        stroke="#74c476" strokeWidth="16"
+        pathLength="100" strokeDasharray="12 100"
+        strokeDashoffset="-56" />
+    </a>
+
+    <a href="#hawaiian">
+      <circle r="8" cx="16" cy="16" fill="none"
+        stroke="#bae4b3" strokeWidth="16"
+        pathLength="100" strokeDasharray="12 100"
+        strokeDashoffset="-68" />
+    </a>
+
+    <a href="#other">
+      <circle r="8" cx="16" cy="16" fill="none"
+        stroke="#cbd5e1" strokeWidth="16"
+        pathLength="100" strokeDasharray="20 100"
+        strokeDashoffset="-80" />
+    </a>
+
+    <circle r="4.5" cx="16" cy="16" fill="white" />
+
+  </svg>
+
+  <div style={{ marginTop: '30px', textAlign: 'left', maxWidth: '400px', marginInline: 'auto' }}>
+
+    <details id="filipino">
+      <summary>Filipino</summary>
+      56%
+    </details>
+
+    <details id="chinese">
+      <summary>Chinese</summary>
+      12%
+    </details>
+
+    <details id="hawaiian">
+      <summary>Hawaiian</summary>
+      12%
+    </details>
+
+    <details id="other">
+      <summary>Other</summary>
+      20%
+    </details>
+
+  </div>
+
+</div>
+
+## v18 
+
+<div style={{ margin: '60px 0', fontFamily: 'sans-serif', textAlign: 'center' }}>
+
+  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '40px' }}>
+    Resident Demographics (Hover to Reveal)
+  </h3>
+
+  <svg viewBox="0 0 32 32"
+       style={{ width: '320px', height: '320px', transform: 'rotate(-90deg)' }}>
+
+    {/* Background circle */}
+    <circle r="8" cx="16" cy="16" fill="none" stroke="#f1f5f9" strokeWidth="16" />
+
+    {/* Filipino – 56% */}
+    <g>
+      <circle
+        r="8"
+        cx="16"
+        cy="16"
+        fill="none"
+        stroke="#238b45"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="56 100"
+      />
+      <title>Filipino – 56%</title>
+    </g>
+
+    {/* Chinese – 12% */}
+    <g>
+      <circle
+        r="8"
+        cx="16"
+        cy="16"
+        fill="none"
+        stroke="#74c476"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="12 100"
+        strokeDashoffset="-56"
+      />
+      <title>Chinese – 12%</title>
+    </g>
+
+    {/* Hawaiian – 12% */}
+    <g>
+      <circle
+        r="8"
+        cx="16"
+        cy="16"
+        fill="none"
+        stroke="#bae4b3"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="12 100"
+        strokeDashoffset="-68"
+      />
+      <title>Hawaiian – 12%</title>
+    </g>
+
+    {/* Other – 20% */}
+    <g>
+      <circle
+        r="8"
+        cx="16"
+        cy="16"
+        fill="none"
+        stroke="#cbd5e1"
+        strokeWidth="16"
+        pathLength="100"
+        strokeDasharray="20 100"
+        strokeDashoffset="-80"
+      />
+      <title>Other – 20%</title>
+    </g>
+
+    {/* Center cutout */}
+    <circle r="4.5" cx="16" cy="16" fill="white" />
+
+  </svg>
+
+  <p style={{ fontSize: '12px', color: '#64748b', marginTop: '25px', fontStyle: 'italic' }}>
+    Hover over each slice to see the percentage.
+  </p>
+
+</div>
+
 ## v17
 <div style={{ margin: '5vw auto', maxWidth: '85vw', backgroundColor: '#fff', padding: '4vw', borderRadius: '2vw', boxShadow: '0 1vw 3vw rgba(0,0,0,0.05)', fontFamily: 'sans-serif' }}>
   <style>{`
