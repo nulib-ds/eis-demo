@@ -246,6 +246,144 @@ title: Loring Park Neighborhood
 
 </div>
 
+## per agency
+<div style={{ margin: '60px 0', fontFamily: 'sans-serif', textAlign: 'center' }}>
+
+  <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '30px' }}>
+    EIS Documents by Lead Agency
+  </h3>
+
+  <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', alignItems: 'center', flexWrap: 'wrap' }}>
+
+    {/* PIE */}
+    <svg viewBox='0 0 32 32'
+         style={{ width: '300px', height: '300px', transform: 'rotate(-90deg)' }}>
+
+      {/* Background */}
+      <circle r='8' cx='16' cy='16'
+              fill='none'
+              stroke='#f1f5f9'
+              strokeWidth='16' />
+
+      {/* Department of Housing and Urban Development (HUD) D 27.8% */}
+      <circle
+        r='8' cx='16' cy='16'
+        fill='none'
+        stroke='#2A9D8F'
+        strokeWidth='16'
+        pathLength='100'
+        strokeDasharray='27.8 100'>
+        <title> Department of Housing and Urban Development (HUD) — 27.8%</title>
+      </circle>
+
+      {/* Federal Highway Administration 12.5% */}
+      <circle
+        r='8' cx='16' cy='16'
+        fill='none'
+        stroke='#E76F51'
+        strokeWidth='16'
+        pathLength='100'
+        strokeDasharray='12.5 100'
+        strokeDashoffset='-27.8'>
+        <title>Federal Highway Administration — 12.5%</title>
+      </circle>
+
+      {/* Urban Mass Transportation Administration 6.9% */}
+      <circle
+        r='8' cx='16' cy='16'
+        fill='none'
+        stroke='#F4A261'
+        strokeWidth='16'
+        pathLength='100'
+        strokeDasharray='6.9 100'
+        strokeDashoffset='-40.3'>
+        <title>Urban Mass Transportation Administration — 6.9%</title>
+      </circle>
+
+      {/* Bureau of Reclamation 4.9% */}
+      <circle
+        r='8' cx='16' cy='16'
+        fill='none'
+        stroke='#5C6F91'
+        strokeWidth='16'
+        pathLength='100'
+        strokeDasharray='4.9 100'
+        strokeDashoffset='-47.2'>
+        <title>Bureau of Reclamation — 4.9%</title>
+      </circle>
+
+      {/* Centers of Excellence 4.2% */}
+      <circle
+        r='8' cx='16' cy='16'
+        fill='none'
+        stroke='#A8C3A1'
+        strokeWidth='16'
+        pathLength='100'
+        strokeDasharray='4.2 100'
+        strokeDashoffset='-52.1'>
+        <title>Centers of Excellence — 4.2%</title>
+      </circle>
+
+      {/* Other Agencies 43.7% */}
+      <circle
+        r='8' cx='16' cy='16'
+        fill='none'
+        stroke='#C9C9C9'
+        strokeWidth='16'
+        pathLength='100'
+        strokeDasharray='43.7 100'
+        strokeDashoffset='-56.3'>
+        <title>Other Agencies — 43.7%</title>
+      </circle>
+
+      {/* Center hole */}
+      <circle r='4.5' cx='16' cy='16' fill='white' />
+
+    </svg>
+
+    {/* LEGEND */}
+    <div style={{ textAlign: 'left', fontSize: '14px' }}>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#2A9D8F', marginRight: '8px' }}></span>
+        Department of Housing and Urban Development (HUD) — 27.8%
+      </div>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#E76F51', marginRight: '8px' }}></span>
+        Federal Highway Administration — 12.5%
+      </div>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#F4A261', marginRight: '8px' }}></span>
+        Urban Mass Transportation Administration — 6.9%
+      </div>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#5C6F91', marginRight: '8px' }}></span>
+        Bureau of Reclamation — 4.9%
+      </div>
+
+      <div style={{ marginBottom: '8px' }}>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#A8C3A1', marginRight: '8px' }}></span>
+        Centers of Excellence — 4.2%
+      </div>
+
+      <div>
+        <span style={{ display: 'inline-block', width: '14px', height: '14px', background: '#C9C9C9', marginRight: '8px' }}></span>
+        Other Agencies — 43.7%
+      </div>
+
+    </div>
+
+  </div>
+
+  <p style={{ fontSize: '12px', color: '#64748b', marginTop: '20px', fontStyle: 'italic' }}>
+    Hover over each colored slice to see the percentage.
+  </p>
+
+</div>
+
 ## category
 
 ### Urban Development & Housing: 29.2% (42 documents)
