@@ -12,6 +12,315 @@ title: Loring Park Neighborhood
 <Container>
 ## This subpage is a bunch of experimentations for visualization of EIS documents data
 
+## hellooooo
+<div>
+  {/* CSS for the Hover Effect */}
+  <style>
+    {`
+      .bar-group {
+        cursor: pointer;
+      }
+      /* Hide the label by default */
+      .pop-label {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        color: #475569;
+        font-weight: 700;
+        font-size: 13px;
+        margin-bottom: 4px;
+      }
+      /* Show label and slide it up on hover */
+      .bar-group:hover .pop-label {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Subtle brighten effect on the bar itself */
+      .bar-item {
+        transition: filter 0.2s ease;
+      }
+      .bar-group:hover .bar-item {
+        filter: brightness(1.1);
+      }
+    `}
+  </style>
+
+  <div className="bar-chart-container" style={{ 
+    display: 'flex', 
+    alignItems: 'flex-end', 
+    gap: '10px', 
+    height: '280px', 
+    padding: '40px 20px',
+    backgroundColor: '#f8fafc',
+    borderRadius: '12px',
+    fontFamily: 'system-ui, -apple-system, sans-serif'
+  }}>
+    
+    {/* 1970 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">2</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#94a3b8', height: '13px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1970</span>
+    </div>
+
+    {/* 1971 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">2</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#94a3b8', height: '13px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1971</span>
+    </div>
+
+    {/* 1972 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">23</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#475569', height: '148px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1972</span>
+    </div>
+
+    {/* 1973 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">31</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#1e293b', height: '200px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1973</span>
+    </div>
+
+    {/* 1974 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">11</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#64748b', height: '71px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1974</span>
+    </div>
+
+    {/* 1975 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">7</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#94a3b8', height: '45px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1975</span>
+    </div>
+
+    {/* 1976 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">26</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#334155', height: '168px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1976</span>
+    </div>
+
+    {/* 1977 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">23</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#475569', height: '148px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1977</span>
+    </div>
+
+    {/* 1978 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">9</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#94a3b8', height: '58px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1978</span>
+    </div>
+
+    {/* 1979 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">0</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#cbd5e1', height: '4px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1979</span>
+    </div>
+
+    {/* 1980 Bar */}
+    <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <span className="pop-label">10</span>
+      <div className="bar-item" style={{ width: '100%', backgroundColor: '#64748b', height: '65px', borderRadius: '4px 4px 0 0' }}></div>
+      <span style={{ fontSize: '12px', marginTop: '10px', color: '#64748b' }}>1980</span>
+    </div>
+
+  </div>
+</div>
+
+## hellooooooo
+{/* Add this CSS to your stylesheet or a <style> tag to enable the hover effect */}
+<style>
+  {`
+    .bar-group:hover .pop-label {
+      opacity: 1 !important;
+      transform: translateY(-5px);
+    }
+    .bar-item:hover {
+      filter: brightness(1.1);
+      cursor: pointer;
+    }
+  `}
+</style>
+
+<div className="bar-chart-container" style={{ 
+  display: 'flex', 
+  alignItems: 'flex-end', 
+  gap: '8px', 
+  height: '260px', 
+  padding: '40px 20px 20px 20px',
+  fontFamily: 'sans-serif' 
+}}>
+  
+  {/* 1970 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>2</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#dbeafe', height: '13px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1970</span>
+  </div>
+
+  {/* 1971 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>2</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#bfdbfe', height: '13px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1971</span>
+  </div>
+
+  {/* 1972 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>23</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#93c5fd', height: '148px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1972</span>
+  </div>
+
+  {/* 1973 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>31</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#60a5fa', height: '200px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1973</span>
+  </div>
+
+  {/* 1974 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>11</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#3b82f6', height: '71px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1974</span>
+  </div>
+
+  {/* 1975 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>7</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#2563eb', height: '45px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1975</span>
+  </div>
+
+  {/* 1976 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>26</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#1d4ed8', height: '168px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1976</span>
+  </div>
+
+  {/* 1977 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>23</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#1e40af', height: '148px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1977</span>
+  </div>
+
+  {/* 1978 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>9</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#1e3a8a', height: '58px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1978</span>
+  </div>
+
+  {/* 1979 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>0</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#172554', height: '2px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1979</span>
+  </div>
+
+  {/* 1980 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 1, fontSize: '12px', fontWeight: 'bold', transition: '0.3s', marginBottom: '4px' }}>10</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#0f172a', height: '65px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1980</span>
+  </div>
+
+</div>
+
+## hellooooo
+<div className="bar-chart-container" style={{ display: 'flex', alignItems: 'flex-end', gap: '8px', height: '250px', padding: '20px' }}>
+  
+  {/* 1970 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>2</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#dbeafe', height: '13px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1970</span>
+  </div>
+
+  {/* 1971 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>2</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#bfdbfe', height: '13px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1971</span>
+  </div>
+
+  {/* 1972 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>23</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#93c5fd', height: '148px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1972</span>
+  </div>
+
+  {/* 1973 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>31</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#60a5fa', height: '200px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1973</span>
+  </div>
+
+  {/* 1974 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>11</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#3b82f6', height: '71px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1974</span>
+  </div>
+
+  {/* 1975 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>7</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#2563eb', height: '45px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1975</span>
+  </div>
+
+  {/* 1976 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>26</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#1d4ed8', height: '168px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1976</span>
+  </div>
+
+  {/* 1977 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>23</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#1e40af', height: '148px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1977</span>
+  </div>
+
+  {/* 1978 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>9</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#1e3a8a', height: '58px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1978</span>
+  </div>
+
+  {/* 1979 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>0</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#172554', height: '2px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1979</span>
+  </div>
+
+  {/* 1980 Bar */}
+  <div className="bar-group" style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <span className="pop-label" style={{ opacity: 0, fontSize: '12px', fontWeight: 'bold', transition: '0.3s' }}>10</span>
+    <div className="bar-item" style={{ width: '100%', backgroundColor: '#0f172a', height: '65px', borderRadius: '4px 4px 0 0' }}></div>
+    <span style={{ fontSize: '13px', marginTop: '10px' }}>1980</span>
+  </div>
+
+</div>
+
 ## v22 for about page for EIS docs
 <div style={{ margin: '60px 0', fontFamily: 'sans-serif', textAlign: 'center', flexWrap: 'wrap' }}>
 
