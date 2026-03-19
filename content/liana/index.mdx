@@ -13,32 +13,53 @@ title: Loring Park Neighborhood
 ## This subpage is a bunch of experimentations for visualization of EIS documents data
 
 ## NEPA timeline
-
 <Timeline
-  title="EIS "
-  description="This is a test!"
+  title="EIS Legislation Timeline"
+  description="A timeline of the NEPA/EIS legislation"
   range={{start: "1969", end: "2023", granularity: "year"}}
-  threshold={0}
+  threshold={3}
   steps={10}
   height="600px"
 >
+ <TimelinePoint
+    date="1969"
+    title="The National Environmental Policy Act (NEPA) passed the Senate and House of Representatives"
+    summary="Senate vote was unanimous, House of Representatives was voted 372-15"
+  /> 
   <TimelinePoint
     date="1970"
-    title="Passed the Senate and House of Representatives (1969), signed into law by President Richard Nixon (1970)"
-    summary="Senate vote was unanimous, House of Representatives was voted 372-15"
+    title="President Richard Nixon signs NEPA into law"
+    referencedManifests={[
+      "https://www.govinfo.gov/content/pkg/COMPS-10352/pdf/COMPS-10352.pdf",
+    ]}
   />
   <TimelinePoint
     date="1978"
     title="Public Law 94-83 (Amendment)"
     summary="Amended NEPA to allow state agencies to prepare environmental impact statements for federal grant programs, provided that the responsible federal official maintains involvement, performs an independent evaluation, and coordinates with other affected states or land management entities"
+    side="right"
   />
 
    <TimelinePoint
     date="2023"
     title="Public Law 118-5 (Amendment)"
     summary="Amended NEPA to streamline the federal permitting process by establishing mandatory one- and two-year deadlines for environmental reviews, imposing strict page limits on documents, and narrowing the scope of required impact and alternative analyses."
+    side="left"
   />
 </Timeline>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
